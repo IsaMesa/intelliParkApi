@@ -16,7 +16,7 @@ const authenticateToken = (req, res, next) => {
 
     if (tokenParts.length !== 2 || tokenParts[0] !== 'Bearer') {
         return res.status(401).json({
-        message: 'Foramto de token invalido.'
+        message: 'Foramto de token inválido.'
         });
     }
 
@@ -29,7 +29,7 @@ const authenticateToken = (req, res, next) => {
     
     } catch (error) {
         return res.status(401).json({
-            message: 'Token vencido o invalido.'
+            message: 'Token vencido o inválido.'
         });
     }
   
