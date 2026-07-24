@@ -33,7 +33,7 @@ const registerPayment = async (paymentData, authenticatedUser) => {
   }
 
   if (parkingRecord.parking_status !== 'finalizado') {
-    throw new Error('Solo se pueden pagar los registros de estacionamiento finalizados.');
+    throw new Error(`Solo se pueden pagar los registros de estacionamiento finalizados. Este registro está en estado '${parkingRecord.parking_status}'.`);
   }
 
   if (!parkingRecord.parking_total_amount) {
